@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CoreAge Rx GLP-1 Balance — Buyer Persona v2</title>
+<style>
+  :root {
+    --bg: #faf7f2;
+    --ink: #1c1c1c;
+    --muted: #6b6b6b;
+    --accent: #803DED;
+    --accent-soft: #f1eaff;
+    --rule: #e3ddd2;
+    --soft: #f0ebe0;
+    --warn: #b8341d;
+    --ok: #1f6b3a;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 1.55; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 56px 36px 96px; }
+  h1 { font-family: "Playfair Display", Georgia, serif; font-weight: 700; font-size: 40px; line-height: 1.1; margin: 0 0 8px; }
+  h2 { font-family: "Playfair Display", Georgia, serif; font-weight: 700; font-size: 26px; line-height: 1.15; margin: 56px 0 12px; border-bottom: 2px solid var(--rule); padding-bottom: 6px; }
+  h3 { font-size: 17px; font-weight: 700; margin: 28px 0 6px; }
+  h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin: 22px 0 4px; }
+  p, li { font-size: 15.5px; }
+  .meta { color: var(--muted); font-size: 13px; margin: 0 0 24px; }
+  .hero { display: grid; grid-template-columns: 1fr 220px; gap: 28px; align-items: start; background: white; border: 1px solid var(--rule); border-radius: 12px; padding: 22px; margin: 24px 0 12px; }
+  .hero img { width: 100%; border-radius: 6px; background: var(--soft); }
+  .callout { background: white; border-left: 4px solid var(--accent); padding: 14px 18px; margin: 18px 0; border-radius: 0 8px 8px 0; }
+  .callout-soft { background: var(--accent-soft); border-left: 4px solid var(--accent); padding: 14px 18px; margin: 18px 0; border-radius: 0 8px 8px 0; }
+  .quote { background: var(--soft); border-radius: 8px; padding: 12px 16px; margin: 10px 0; font-style: italic; color: #2a2a2a; font-size: 14.5px; }
+  .quote::before { content: "“"; font-size: 28px; line-height: 0; vertical-align: -10px; color: var(--accent); margin-right: 4px; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { background: var(--soft); font-weight: 700; }
+  .tag { display: inline-block; background: var(--soft); border-radius: 999px; padding: 3px 10px; font-size: 12px; margin: 2px 4px 2px 0; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; }
+  .col { background: white; border: 1px solid var(--rule); border-radius: 10px; padding: 16px 18px; }
+  .col h4 { margin-top: 0; }
+  .badge-hot { background: #fde2dd; color: var(--warn); font-weight: 600; padding: 2px 8px; border-radius: 4px; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .badge-warm { background: #fff0c2; color: #846a00; font-weight: 600; padding: 2px 8px; border-radius: 4px; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .badge-cold { background: #d7e6ff; color: #1d4990; font-weight: 600; padding: 2px 8px; border-radius: 4px; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .badge-accent { background: var(--accent-soft); color: var(--accent); font-weight: 700; padding: 2px 8px; border-radius: 4px; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .small { font-size: 13px; color: var(--muted); }
+  ul.compact li { margin-bottom: 2px; }
+  hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
+  .map-row { display: grid; grid-template-columns: 200px 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px dashed var(--rule); }
+  .map-row .label { font-weight: 700; font-size: 14px; }
+  .map-row .body { font-size: 14.5px; }
+  .ladder { background: white; border: 1px solid var(--rule); border-radius: 10px; padding: 18px 20px; margin: 12px 0; }
+  .ladder h3 { margin-top: 0; }
+  .ladder .lv { display: inline-block; background: var(--accent); color: white; font-weight: 700; padding: 2px 10px; border-radius: 4px; font-size: 12px; letter-spacing: 0.06em; margin-right: 6px; }
+  .matrix th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .matrix td { font-size: 13.5px; }
+  .matrix td.hl { font-weight: 700; }
+  .vsl { background: white; border: 1px solid var(--rule); border-radius: 10px; padding: 18px 20px; margin: 14px 0; }
+  .vsl .rank { display: inline-block; background: var(--ink); color: white; padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; margin-right: 8px; }
+  .pill { display: inline-block; background: var(--accent-soft); color: var(--accent); border-radius: 4px; padding: 2px 8px; font-size: 12px; font-weight: 600; margin-right: 4px; }
+  .legend { display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 0 18px; font-size: 12.5px; color: var(--muted); }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .dot { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+  .toc { background: white; border: 1px solid var(--rule); border-radius: 10px; padding: 14px 18px; margin: 14px 0 28px; font-size: 13.5px; }
+  .toc ol { margin: 6px 0 0; padding-left: 20px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>CoreAge Rx GLP-1 Balance</h1>
+  <h2 style="margin-top:6px; border:0; padding:0; font-size: 22px;">Buyer Persona v2: Awareness, Sophistication, Ad Matrix, VSL Concepts</h2>
+  <p class="meta">Internal strategy doc · 2026-05-15 · v2 rebuilds v1 through the paid-ads buyer persona framework (Schwartz awareness and sophistication ladders, ad-set segmentation, production-ready creative matrix) plus the copywriting framework for laddered headlines. Source material unchanged: product label, glp1sos.com competitor breakdown, 17-ad TinnitusWave mechanic teardown, reddit r/Ozempic, r/Mounjaro, r/Semaglutide patterns. v1 kept intact at buyer-persona-glp1-balance.html for diff.</p>
+
+  <div class="toc">
+    <strong>What's inside</strong>
+    <ol>
+      <li>Product, in one paragraph (unchanged from v1)</li>
+      <li>Primary persona, deepened (Schwartz state, buying triggers, ad-set mapping)</li>
+      <li>Awareness state ladder, week by week</li>
+      <li>Sophistication ladder, with headlines per level</li>
+      <li>Segmentation that maps directly to Meta ad sets</li>
+      <li>Creative matrix, 14 production-ready concepts</li>
+      <li>VSL angles, 3 distinct concepts ranked</li>
+      <li>What this means for the first 8 weeks of spend</li>
+    </ol>
+  </div>
+
+  <div class="hero">
+    <div>
+      <h3 style="margin-top:0;">The product, in one paragraph</h3>
+      <p>CoreAge Rx GLP-1 Balance is a 30-capsule, once-daily prebiotic and probiotic blend marketed as a companion to GLP-1 therapy. It contains Chicory Root Inulin (211 mg) and Potato Resistant Starch (100 mg) as gut-feeding fiber, plus a 36 mg probiotic blend featuring <em>Akkermansia muciniphila</em>, <em>Bifidobacterium infantis</em>, and <em>Clostridium butyricum</em>. Label positioning: "Helps maintain balanced blood sugar levels as part of a healthy lifestyle." Not a weight-loss claim. Same competitive lane as glp1sos.com, but with the Akkermansia hero strain doing the heavy lifting on credibility.</p>
+      <ul class="compact">
+        <li>30 capsules per bottle, 1 daily, refrigerate</li>
+        <li>3 hero strains, Akkermansia is the differentiator</li>
+        <li>Bills as gut and blood sugar support, not as a drug</li>
+        <li>FDA disclaimer present on the label</li>
+      </ul>
+    </div>
+    <img src="../../Downloads/PRODUCT VOY/Image May 15, 2026 at 03_41_35 PM-Picsart-BackgroundRemover.png" alt="CoreAge Rx GLP-1 Balance bottle">
+  </div>
+
+  <h2>Primary persona, deepened &nbsp;<span class="badge-hot">Phase 1, hottest</span></h2>
+
+  <h3>Linda, 54</h3>
+  <p class="small">Suburban Texas, white, married, two adult kids out of the house. Office manager at a regional insurance brokerage, makes around $78k, husband makes more. She has been on Ozempic for fourteen weeks. She has lost 23 pounds. She is also miserable in ways she did not expect.</p>
+
+  <div class="callout">
+    <strong>Why she is the primary target.</strong> Solution-aware, product-aware, in active pain on a list of symptoms she can name. She is not deciding whether GLP-1 is for her, she is desperate to keep losing weight without feeling like her body is breaking. Hottest possible audience for a companion supplement. Lowest CPA window we will ever see.
+  </div>
+
+  <h4>Schwartz awareness state</h4>
+  <table>
+    <tr><th style="width:200px;">Dimension</th><th>State</th></tr>
+    <tr><td>Problem-aware</td><td>Fully. She can name every symptom and rank them.</td></tr>
+    <tr><td>Solution-aware</td><td>Partial. She has read "take probiotics" and "drink electrolytes" but does not yet believe a specific supplement solves it.</td></tr>
+    <tr><td>Product-aware</td><td>Low. She has heard "Akkermansia" in a podcast or TikTok but does not connect it to a buyable product.</td></tr>
+    <tr><td>Most aware</td><td>Not yet. Reaching this state is what month 1 of ads is for.</td></tr>
+  </table>
+
+  <h4>Sophistication state of her ad feed</h4>
+  <p>Her feed already contains compounded GLP-1 sellers, "natural Ozempic alternative" gummies, generic probiotic ads (Seed, Align, Ritual), and weight-loss coaching offers. She has seen 50+ supplement claims this year. We are entering an already-sophisticated market. <strong>Schwartz level 4 to 5.</strong> Headlines must lead with a unique mechanism (Akkermansia, the strain by name) or with identity (the patient your doctor never warned). Plain "supports gut health" is dead on arrival.</p>
+
+  <h4>Buying triggers (the moments she pulls out a credit card)</h4>
+  <ul>
+    <li><strong>Symptom spike.</strong> Day 3 of constipation, second meeting walked out of because of burps, a single morning of looking pregnant in the mirror.</li>
+    <li><strong>Dose escalation week.</strong> 0.5mg to 1.0mg jump on Ozempic. New nausea wave, she goes looking for a fix that night.</li>
+    <li><strong>Friend mentions Akkermansia.</strong> A peer in her FB group drops the strain name. She Googles. Our retargeting catches her.</li>
+    <li><strong>Negative scale day.</strong> Stalled weight or first regain pound. She blames the gut, looks for "what to add."</li>
+    <li><strong>Doctor invalidates her.</strong> Visit where her PCP shrugs at the side effects. She walks out angry. The doctor-villain frame lands hottest in this 48-hour window.</li>
+  </ul>
+
+  <h4>Ad-set segmentation, mapped directly to Meta</h4>
+  <table>
+    <tr><th>Ad set</th><th>Targeting</th><th>Symptom lead</th><th>Budget weight wk1</th></tr>
+    <tr><td>L1-Burps</td><td>Women 45-64, interests: Ozempic, Mounjaro, Wegovy, semaglutide, Type 2 Diabetes; broad expansion ON</td><td>Sulphur burps</td><td>22%</td></tr>
+    <tr><td>L1-Constipation</td><td>Same core, layer: fiber supplements, Metamucil, MiraLAX</td><td>Constipation by morning</td><td>22%</td></tr>
+    <tr><td>L1-Bloat-Mirror</td><td>Same core, layer: menopause, perimenopause, HRT</td><td>"Pregnant after dinner" bloat</td><td>14%</td></tr>
+    <tr><td>L1-Muscle-Sarcopenia</td><td>Same core, layer: protein powder, strength training over 50, Dr. Gabrielle Lyon, Peter Attia</td><td>Muscle loss / skinny-fat</td><td>12%</td></tr>
+    <tr><td>L1-Akkermansia-Curious</td><td>Same core, layer: ZOE, Andrew Huberman, Dr. Mark Hyman, gut microbiome</td><td>Microbiome rebuild, hero strain</td><td>14%</td></tr>
+    <tr><td>L1-Doctor-Villain</td><td>Same core, broad</td><td>"What your endocrinologist won't tell you"</td><td>10%</td></tr>
+    <tr><td>L1-Broad-Sandbox</td><td>Women 45-64, US only, no interests, Advantage+</td><td>Best-performing creative rotation</td><td>6%</td></tr>
+  </table>
+  <p class="small">Seven ad sets for week 1. Each ad set runs 3 to 5 creative variants. Total creative count: 21 to 35 ads at launch. One funnel, one VSL, many hooks (TinnitusWave pattern 1).</p>
+
+  <h2>Awareness state ladder, week by week</h2>
+  <p class="small">The same audience reads our ads differently as they see more of them. Cycle the message accordingly. This is what kills accounts that "found a winner" and then watched CPM double in week 4.</p>
+
+  <div class="grid2">
+    <div class="col">
+      <h4>Weeks 1 to 2 — Recognition</h4>
+      <p>She has never seen our brand. Job of the ad: make her feel seen on the symptom. Headlines name the pain in her exact words, no product yet.</p>
+      <p class="small"><em>Example: "Day 5 and you still haven't gone? Here's why GLP-1 wrecks your gut."</em></p>
+    </div>
+    <div class="col">
+      <h4>Weeks 3 to 4 — Mechanism</h4>
+      <p>She has seen us. Now introduce Akkermansia by name. Job: install a new buying criterion in her head ("I need the strain, not just any probiotic").</p>
+      <p class="small"><em>Example: "The bacteria missing in 90% of Ozempic users' guts."</em></p>
+    </div>
+    <div class="col">
+      <h4>Weeks 5 to 6 — Identity</h4>
+      <p>She knows the strain. Now sell her the identity of the informed patient. Job: make taking CoreAge feel like belonging to the smart Ozempic users, not the suffering ones.</p>
+      <p class="small"><em>Example: "The 1 capsule the smartest Ozempic patients are taking quietly."</em></p>
+    </div>
+    <div class="col">
+      <h4>Weeks 7 to 8 — Risk reversal and proof</h4>
+      <p>She has clicked but not bought. Job: hand her the trust scaffold. Testimonials, third-party COA, 30-day guarantee, refrigeration as proof of potency.</p>
+      <p class="small"><em>Example: "30 days. If your mornings don't change, send it back."</em></p>
+    </div>
+  </div>
+
+  <h2>Sophistication ladder, with production-ready headlines</h2>
+  <p class="small">Schwartz 5 levels applied. The market is already at level 4 to 5. We lead there, hold a level 3 inventory for fatigue swaps, and pre-build levels 1 and 2 for retargeting and warm audiences only.</p>
+
+  <div class="ladder">
+    <h3><span class="lv">Lv 1</span> Direct claim (only useful as a retargeting refresher to people who already trust us)</h3>
+    <ul>
+      <li>Stop the sulphur burps.</li>
+      <li>1 capsule a day. Gut back online.</li>
+      <li>Refrigerated probiotic for Ozempic users.</li>
+    </ul>
+  </div>
+
+  <div class="ladder">
+    <h3><span class="lv">Lv 2</span> Bigger claim (dead in cold, alive in warm)</h3>
+    <ul>
+      <li>The fastest way to stop GLP-1 constipation, by morning.</li>
+      <li>End sulphur burps in 1 night, without quitting Ozempic.</li>
+      <li>Get your mornings back in under a week.</li>
+    </ul>
+  </div>
+
+  <div class="ladder">
+    <h3><span class="lv">Lv 3</span> Mechanism (the new "how it works", first-time buyers' favorite)</h3>
+    <ul>
+      <li>The Akkermansia Protocol: 1 strain, 1 capsule, gut back in 7 days.</li>
+      <li>Why Ozempic wrecks your gut (and the 36mg fix doctors don't mention).</li>
+      <li>The bacteria scientists call "the Ozempic of the gut" is now in 1 capsule.</li>
+      <li>Press this strain into your gut tonight. Burps gone by morning.</li>
+    </ul>
+  </div>
+
+  <div class="ladder">
+    <h3><span class="lv">Lv 4</span> New mechanism, our recommended cold-traffic lead (most of week 1 spend)</h3>
+    <ul>
+      <li>The Hidden Enemy of Ozempic Patients? This Bedtime Capsule Stops the Sulphur Burps.</li>
+      <li>The Greatest Enemy of Your Ozempic Results? This 1-Capsule Routine Restores the Strain Your Gut Lost.</li>
+      <li>The Real Reason GLP-1 Wrecks Your Gut? It Kills One Bacteria. We Put It Back.</li>
+      <li>Doctors Won't Tell Ozempic Patients About This Gut Bacteria.</li>
+      <li>What Endocrinologists Are Missing About GLP-1 Constipation.</li>
+    </ul>
+  </div>
+
+  <div class="ladder">
+    <h3><span class="lv">Lv 5</span> Identity and us-vs-them (week 5+ for fatigue swap, or for the "smart patient" angle)</h3>
+    <ul>
+      <li>The Ozempic patients who don't suffer aren't lucky. They take this.</li>
+      <li>There are two kinds of Ozempic users. The ones who suffer, and the ones who know about Akkermansia.</li>
+      <li>The 1 capsule the smartest Ozempic patients are taking quietly.</li>
+      <li>The reason your sister-in-law's GLP-1 journey is easier than yours.</li>
+    </ul>
+  </div>
+
+  <h2>Creative matrix &nbsp;<span class="badge-accent">Production-ready</span></h2>
+  <p class="small">14 ad concepts ready to brief a designer. Each row: headline, visual brief, CTA, target symptom, TinnitusWave mechanic applied, sophistication level, ad set destination. Visual aesthetic is the kitsch 2000s look from TinnitusWave: kitchen counter, MS Paint arrow, Impact font, slightly amateur design. Linda's filter rejects polished agency creative as "spam".</p>
+
+  <table class="matrix">
+    <tr>
+      <th>#</th>
+      <th>Headline</th>
+      <th>Visual brief</th>
+      <th>CTA</th>
+      <th>Symptom</th>
+      <th>Mechanic</th>
+      <th>Lv</th>
+      <th>Ad set</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td class="hl">The Hidden Enemy of Ozempic Patients? This Bedtime Capsule Stops the Sulphur Burps</td>
+      <td>Kitchen counter at night. CoreAge bottle, capsule next to it. MS Paint arrow pointing to capsule. Crossed-out fried egg in the corner.</td>
+      <td>Watch The Demonstration</td>
+      <td>Sulphur burps</td>
+      <td>1, 2b, 4, 5, 7</td>
+      <td>Lv 4</td>
+      <td>L1-Burps</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td class="hl">Day 5 And You Still Haven't Gone? This 1-Capsule Routine Fixes GLP-1 Constipation By Morning</td>
+      <td>Bathroom door, calendar with 5 days X'd out in red Sharpie. Bottle on the counter next to it.</td>
+      <td>See How</td>
+      <td>Constipation</td>
+      <td>2b, 4, 6, 10, 11</td>
+      <td>Lv 4</td>
+      <td>L1-Constipation</td>
+      </tr>
+    <tr>
+      <td>3</td>
+      <td class="hl">Doctors Won't Tell Ozempic Patients About This Gut Bacteria</td>
+      <td>Cartoon doctor with mouth taped shut. Microscope view of Akkermansia in a thought bubble.</td>
+      <td>Watch The Demonstration</td>
+      <td>Microbiome / multi</td>
+      <td>3, 5, 9</td>
+      <td>Lv 4</td>
+      <td>L1-Doctor-Villain</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td class="hl">The Bacteria Scientists Call "The Ozempic Of The Gut" Is Now In 1 Capsule</td>
+      <td>Split frame. Left: Ozempic pen. Right: CoreAge bottle. Both with same MS Paint glow.</td>
+      <td>Discover</td>
+      <td>Microbiome / Akkermansia</td>
+      <td>5, 7, 9</td>
+      <td>Lv 3</td>
+      <td>L1-Akkermansia-Curious</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td class="hl">"I Lost 19 Lbs And My Arms Got Worse." This Strain Protects Muscle On GLP-1.</td>
+      <td>Older woman's flexed bicep next to a deflated balloon. Arrow pointing at the bicep. Capsule inset.</td>
+      <td>See How</td>
+      <td>Muscle loss / sarcopenia</td>
+      <td>3, 5, 9, 10</td>
+      <td>Lv 4</td>
+      <td>L1-Muscle-Sarcopenia</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td class="hl">"I Look Pregnant After Dinner On Mounjaro." This Capsule Ends Bloat By Morning.</td>
+      <td>Stomach silhouette before and after, MS Paint arrows. "8 PM" and "By morning" handwritten.</td>
+      <td>Watch Now</td>
+      <td>Bloat</td>
+      <td>2b, 4, 6, 10</td>
+      <td>Lv 4</td>
+      <td>L1-Bloat-Mirror</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td class="hl">The 36 mg Routine: What The Smartest Ozempic Patients Are Taking Quietly</td>
+      <td>Hand opening a fridge, single capsule on the shelf. "36 mg" handwritten on the bottle in Sharpie.</td>
+      <td>Discover</td>
+      <td>Multi / identity</td>
+      <td>1, 5, 7, 9</td>
+      <td>Lv 5</td>
+      <td>L1-Broad-Sandbox</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td class="hl">Press This Spot On Your Stomach After Ozempic To Stop The Bloating (Then Do This)</td>
+      <td>Hand-drawn stomach with red dot marked, MS Paint arrow. Capsule in the corner as the actual fix.</td>
+      <td>Watch The Demonstration</td>
+      <td>Bloat</td>
+      <td>2a, 5, 7, 9</td>
+      <td>Lv 4</td>
+      <td>L1-Bloat-Mirror</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td class="hl">The Real Reason GLP-1 Wrecks Your Gut? It Kills One Bacteria. We Put It Back.</td>
+      <td>Cartoon microbiome "before" vs "after". One specific bacterium labeled "Akkermansia" highlighted in purple.</td>
+      <td>See The Science</td>
+      <td>Microbiome / mechanism</td>
+      <td>3, 5, 7, 10</td>
+      <td>Lv 4</td>
+      <td>L1-Akkermansia-Curious</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td class="hl">Endocrinologists Won't Tell Ozempic Patients About This Gut Bacteria</td>
+      <td>Doctor cartoon with finger on lips, hand-drawn capsule next to him.</td>
+      <td>Watch The Demonstration</td>
+      <td>Microbiome / doctor villain</td>
+      <td>3, 5, 9</td>
+      <td>Lv 4</td>
+      <td>L1-Doctor-Villain</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td class="hl">1 Capsule Tonight Ends GLP-1 Sulphur Burps By Morning</td>
+      <td>Bedside table at night. Glass of water, capsule. Alarm clock reading 10:47 PM.</td>
+      <td>Watch Now</td>
+      <td>Sulphur burps</td>
+      <td>2b, 4, 6, 10</td>
+      <td>Lv 3</td>
+      <td>L1-Burps</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td class="hl">There Are Two Kinds Of Ozempic Users. The Ones Who Suffer, And The Ones Who Know About Akkermansia.</td>
+      <td>Two-panel cartoon. Left woman clutching stomach. Right woman smiling with coffee. Capsule between them.</td>
+      <td>Watch The Demonstration</td>
+      <td>Multi / identity</td>
+      <td>5, 7, 9</td>
+      <td>Lv 5</td>
+      <td>L1-Broad-Sandbox</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td class="hl">What Your Weight-Loss Doctor Doesn't Know About GLP-1 Brain Fog</td>
+      <td>Brain cartoon with cloud over it. Capsule blowing the cloud away with a fan icon.</td>
+      <td>See How</td>
+      <td>GLP-1 fog</td>
+      <td>3, 5, 10</td>
+      <td>Lv 4</td>
+      <td>L1-Broad-Sandbox (test ad set)</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td class="hl">She Lost 60 lbs On Mounjaro. Then Quit. Then This Bacteria Saved Her From Rebound.</td>
+      <td>Before/after photo (compliant, no scale numbers). MS Paint arrow at the bottle in the "after" frame.</td>
+      <td>Watch The Demonstration</td>
+      <td>Cycle-off / rebound</td>
+      <td>3, 5, 6, 9</td>
+      <td>Lv 4</td>
+      <td>Phase 3 staging (warm)</td>
+    </tr>
+  </table>
+
+  <div class="callout-soft">
+    <strong>How to use this matrix in practice.</strong> Hand rows 1, 2, 3, 5, 6, 9, 11 to the designer first. These cover the 5 ad sets that get 80% of week-1 spend. Rows 4, 7, 8, 10, 12, 13 are creative-fatigue swaps for weeks 3 to 6. Row 14 is the Phase 3 bridge ad, do not push until Phase 1 has a winner.
+  </div>
+
+  <h2>VSL angles, 3 distinct concepts &nbsp;<span class="badge-accent">Cold-traffic conversion ranked</span></h2>
+  <p class="small">All 14 ads above feed one VSL, same as TinnitusWave's 17 ads feeding one. The three concepts below are alternative VSL leads to test against each other in month 2 once we have a hook winner from the static ads. Each one is internally consistent in lead, big idea, and pacing.</p>
+
+  <div class="vsl">
+    <h3><span class="rank">Rank 1</span> The Doctor Cover-Up (highest cold-traffic conversion bet)</h3>
+    <p><strong>Lead, first 30 seconds:</strong> "If you're on Ozempic, Mounjaro, or Wegovy and your gut feels like it's falling apart, your doctor is not going to tell you what I'm about to tell you. Not because they're hiding it. Because they don't know."</p>
+    <p><strong>Big idea:</strong> GLP-1 drugs work by slowing the gut, and that slowing kills off one specific strain of bacteria, <em>Akkermansia muciniphila</em>, the same strain published research has been calling "the Ozempic of the gut." Without it, every symptom Linda has gets worse. With it back, the symptoms reverse.</p>
+    <p><strong>Pacing:</strong> 9 to 11 minutes. Doctor villain framing in minute 1. Akkermansia introduced minute 2. Mechanism explained minutes 3 to 5. Testimonials minutes 5 to 7. Offer reveal minute 8. Risk reversal minute 9.</p>
+    <p><strong>Why it ranks first:</strong> Pattern matches Linda's pre-existing resentment at her PCP, hits TinnitusWave mechanic 3 (authority dismissal) at maximum strength, and the Akkermansia strain provides the "new mechanism" that satisfies a level-4 sophistication market. Pirated framing of a proven funnel pattern.</p>
+    <p><strong>Pills:</strong> <span class="pill">Doctor villain</span> <span class="pill">New mechanism</span> <span class="pill">Lv 4 sophistication</span> <span class="pill">9 min</span></p>
+  </div>
+
+  <div class="vsl">
+    <h3><span class="rank">Rank 2</span> The Bedtime Demonstration (closest to TinnitusWave's exact playbook)</h3>
+    <p><strong>Lead, first 30 seconds:</strong> "Tonight, before you go to bed, I'm going to show you a 9-second routine that has helped thousands of Ozempic patients wake up without the sulphur burps, without the bloating, and finally have a normal bathroom morning."</p>
+    <p><strong>Big idea:</strong> The "routine" is taking one CoreAge capsule before bed. The 9-second framing borrows the TinnitusWave gesture-mechanic trick but adapted to ingestion (mechanic 2b). The transformation happens overnight, "by morning" is the emotional anchor that hits Linda's life metric directly.</p>
+    <p><strong>Pacing:</strong> 7 to 9 minutes. Shorter than rank 1. Opens with bedtime demonstration, dramatizes the morning after, then backfills the science behind why it works.</p>
+    <p><strong>Why it ranks second:</strong> Closest 1-to-1 transfer of the proven TinnitusWave funnel pattern, which is the highest-confidence template we have. Slightly behind rank 1 because it leads with promise rather than with the doctor-villain emotional charge, which underuses Linda's strongest pre-existing emotion.</p>
+    <p><strong>Pills:</strong> <span class="pill">Bedtime ritual</span> <span class="pill">By morning anchor</span> <span class="pill">Lv 3 to 4</span> <span class="pill">7 min</span></p>
+  </div>
+
+  <div class="vsl">
+    <h3><span class="rank">Rank 3</span> The Smart Patient Identity (for retargeting and lookalikes, not pure cold)</h3>
+    <p><strong>Lead, first 30 seconds:</strong> "There are two kinds of Ozempic patients. The ones who suffer through the side effects. And the ones who quietly take one capsule a day and skip most of them. Here's how you join the second group."</p>
+    <p><strong>Big idea:</strong> Identity, not pain. Belonging to the informed-patient tribe. Akkermansia is the password.</p>
+    <p><strong>Pacing:</strong> 6 to 8 minutes. Drops pain-agitation almost entirely. Front-loads identity and tribal language, mechanism takes a back seat to "this is what people like you are doing."</p>
+    <p><strong>Why it ranks third for cold:</strong> Identity messaging requires that the viewer already accepts the buying criterion (Akkermansia matters). Cold viewers don't. This VSL converts retargeted and lookalike audiences better than it converts pure cold, so deploy it in month 2 as the warm-audience VSL while ranks 1 and 2 fight for cold spend.</p>
+    <p><strong>Pills:</strong> <span class="pill">Identity</span> <span class="pill">Tribe</span> <span class="pill">Lv 5</span> <span class="pill">Warm only</span></p>
+  </div>
+
+  <h2>What this means for the first 8 weeks of spend</h2>
+
+  <div class="grid2">
+    <div class="col">
+      <h4>Weeks 1 to 2</h4>
+      <ul class="compact">
+        <li>7 ad sets (the table above), all Phase 1 Linda</li>
+        <li>14 creatives from the matrix, weighted to rows 1, 2, 3, 5, 6, 9, 11</li>
+        <li>One VSL (rank 1 or rank 2, pick before launch)</li>
+        <li>Headlines from sophistication Lv 3 and Lv 4 only</li>
+        <li>Kill any ad below 0.8% CTR by day 3 (Funkmedia kill-day-3 rule)</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4>Weeks 3 to 4</h4>
+      <ul class="compact">
+        <li>Refresh creative with rows 4, 7, 8, 10 (mechanism deepening)</li>
+        <li>Introduce second VSL as A/B against the first</li>
+        <li>Start Phase 3 staging ad set (row 14) at 5% of budget</li>
+        <li>Launch first retargeting layer with Lv 1 and Lv 2 headlines</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4>Weeks 5 to 6</h4>
+      <ul class="compact">
+        <li>Add Lv 5 identity creatives (rows 7, 12) to fatigue swap</li>
+        <li>Spin Phase 2 ad set (Karen, considering) at 10%</li>
+        <li>Deploy VSL rank 3 to retargeting and lookalikes</li>
+        <li>First lookalike from purchaser list (1%)</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4>Weeks 7 to 8</h4>
+      <ul class="compact">
+        <li>Scale winners 20% to 30% per increment, 3-day wait between</li>
+        <li>Add risk-reversal and proof creatives for skeptic retargeting</li>
+        <li>Phase 3 (Patricia, cycle-off) gets its own ad set at 10%</li>
+        <li>Refresh VSL with updated testimonials harvested from 30-day customers</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>What carried over from v1 unchanged</h2>
+  <p class="small">These sections were already correct in v1 and are referenced here without rewrite. Open v1 alongside this doc for the full text.</p>
+  <ul class="compact">
+    <li>Verbatim reddit quotes (the "I'd kill for one good poop" set)</li>
+    <li>Pain ranking 1 to 10 with search volume column</li>
+    <li>Doctor-villain insight as the emotional anchor</li>
+    <li>Akkermansia as the credibility differentiator vs Align and Seed</li>
+    <li>"By morning" as the emotional shorthand for Linda's life metric</li>
+    <li>Identity and status moves (the smart one, the disciplined one, the informed patient, the protector)</li>
+    <li>Objection table (5 objections, disarm pattern)</li>
+    <li>Media diet (FB groups, TikTok passive, reddit lurker, Huberman, Hyman, Haver)</li>
+    <li>Secondary personas Karen, Patricia, Susan</li>
+    <li>11 TinnitusWave mechanics mapping (used in this doc as the Mechanic column of the creative matrix)</li>
+  </ul>
+
+  <hr>
+  <p class="small">Living doc. Update when first creative test data lands (target: end of week 1 post-launch). Canonical home: <code>~/coreage/coreage-rx-research/01-persona/</code>. Diff target: <code>buyer-persona-glp1-balance.html</code> (v1). Related: <code>05-competitors/01-glp1sos.md</code>, <code>07-funnel-references/01-tinnituswave-funkmedia.md</code>, <code>project_voymedia_coreage_strategy.md</code>.</p>
+
+</div>
+</body>
+</html>
